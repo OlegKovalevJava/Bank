@@ -6,6 +6,8 @@ import com.api.bank.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 @RequiredArgsConstructor
 public class ClientService {
@@ -19,5 +21,7 @@ public class ClientService {
     public void deleteClient(Client client) {
         this.clientRepository.delete(client);
     }
+
+
 
 }

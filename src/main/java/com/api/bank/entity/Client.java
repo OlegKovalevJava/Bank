@@ -13,6 +13,9 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "NAME")
+    private String name;
+
     @Column(name = "BALANCE")
-    private BigDecimal balance;
+    private Long balance;
 }
