@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +23,12 @@ public class ClientService {
         this.clientRepository.delete(client);
     }
 
-
+    public BigDecimal getBalance(Long id) {
+        BigDecimal balance = clientRepository.getBalanceById(id);
+        if (balance == null) {
+            throw new IllegalArgumentException();
+        }
+        return balance;
+    }
 
 }
